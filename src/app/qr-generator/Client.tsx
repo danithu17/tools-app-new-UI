@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import QRCode from "qrcode.react";
+import { QRCodeCanvas } from "qrcode.react";
 
 export default function QRCodeClient() {
   const [text, setText] = useState("");
@@ -57,7 +57,7 @@ export default function QRCodeClient() {
       <div className="flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-3xl p-8">
         <div className="bg-white p-4 rounded-2xl shadow-sm mb-6 max-w-full overflow-hidden flex items-center justify-center border border-slate-200" style={{ minHeight: '280px' }}>
           {text ? (
-            <QRCode id="qr-code-canvas" value={text} size={size} fgColor={color} bgColor={bgColor} level="H" includeMargin={true} />
+            <QRCodeCanvas id="qr-code-canvas" value={text} size={size} fgColor={color} bgColor={bgColor} level="H" includeMargin={true} />
           ) : (
             <div className="text-slate-300 text-center">Enter text to generate QR</div>
           )}
