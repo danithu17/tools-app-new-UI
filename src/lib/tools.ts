@@ -56,7 +56,6 @@ export const TOOLS: Tool[] = [
   { id: "mute-video",       name: "Mute Video",          icon: "🔇", description: "Remove the audio track from a video completely.",                            category: "video", isNew: true },
   { id: "rotate-video",     name: "Rotate Video",        icon: "↩️", description: "Rotate or flip a video in any direction.",                                  category: "video", isNew: true },
   { id: "subtitle-generator", name: "Subtitle Generator", icon: "💬", description: "Auto-generate subtitles from any video or audio file. Download as SRT, VTT or plain text.", category: "video", popular: true, isNew: true },
-  { id: "bg-remover",       name: "AI Background Remover", icon: "🪄", description: "Remove image backgrounds instantly using local AI models.", category: "img", popular: true, isNew: true, soon: true },
   { id: "color-picker",     name: "Color Extractor",     icon: "🎨", description: "Extract dominant color palettes directly from any image.", category: "img", isNew: true, soon: true },
   { id: "create-zip",       name: "Create ZIP",          icon: "🤐", description: "Quickly bundle multiple local files into a single ZIP archive securely.", category: "utils", isNew: true },
   { id: "extract-zip",      name: "Extract ZIP",         icon: "📂", description: "View and extract files from a ZIP archive directly in your browser.", category: "utils", isNew: true },
@@ -64,5 +63,7 @@ export const TOOLS: Tool[] = [
   { id: "base64-converter", name: "Base64 Encoder",      icon: "🔤", description: "Convert files or text to Base64 format instantly in-browser.", category: "utils", isNew: true },
   { id: "hash-generator",   name: "MD5/SHA Files",       icon: "🔐", description: "Generate secure hashes (MD5, SHA-256) of your local files for verification.", category: "utils", isNew: true },
   { id: "password-gen",     name: "Password Generator",  icon: "🔑", description: "Generate military-grade secure passwords locally on your device.", category: "utils", isNew: true, soon: true },
-  { id: "qr-generator",     name: "QR Code Generator",   icon: "📱", description: "Create downloadable QR codes for URLs, WiFi, or plain text.", category: "utils", isNew: true, soon: true }
+  { id: "qr-generator",     name: "QR Code Generator",   icon: "📱", description: "Create downloadable QR codes for URLs, WiFi, or plain text.", category: "utils", isNew: true, soon: true },
+  { id: "json-formatter",   name: "JSON Formatter",      icon: "{} ", description: "Instantly format, validate, and minify messy JSON code completely offline.", category: "utils", isNew: true, soon: true },
+  { id: "markdown-editor",  name: "Local MD Editor",     icon: "📝", description: "Real-time Markdown editor and previewer with PDF and HTML export.", category: "utils", isNew: true, soon: true }
 ];
