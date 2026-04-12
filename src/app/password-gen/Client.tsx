@@ -64,7 +64,7 @@ export default function PasswordClient() {
     if (useUppercase && useLowercase) strength += 1;
     if (useNumbers) strength += 1;
     if (useSymbols) strength += 1;
-    return Math.min(stärke, 5); // typo here, I will fix it inside to strength
+    return Math.min(strength, 5);
   };
 
   const strength = !password.startsWith("Please") ? (
