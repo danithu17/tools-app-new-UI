@@ -7,6 +7,8 @@ export default function JsonFormatterClient() {
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
   
+  const [copied, setCopied] = useState(false);
+
   const handleFormat = (indent: number) => {
     try {
       const parsed = JSON.parse(input);
@@ -18,17 +20,23 @@ export default function JsonFormatterClient() {
   };
   
   const copyToClipboard = () => {
-    if (output) navigator.clipboard.writeText(output);
+    if (output) {
+      navigator.clipboard.writeText(output);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   return (
     <div className="flex flex-col h-full gap-4">
-      <div className="flex gap-2">
-        <button onClick={() => handleFormat(2)} className="px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Format (2 Spaces)</button>
-        <button onClick={() => handleFormat(4)} className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Format (4 Spaces)</button>
-        <button onClick={() => handleFormat(0)} className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Minify</button>
+      <div className="flex gap-2 w-full overflow-x-auto pb-2 md:pb-0">
+        <button onClick={() => handleFormat(2)} className="shrink-0 px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Format (2 Spaces)</button>
+        <button onClick={() => handleFormat(4)} className="shrink-0 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Format (4 Spaces)</button>
+        <button onClick={() => handleFormat(0)} className="shrink-0 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Minify</button>
         <div className="flex-1" />
-        <button onClick={copyToClipboard} className="px-4 py-2 bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">Copy Output</button>
+        <button onClick={copyToClipboard} className="shrink-0 px-4 py-2 bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400 rounded-lg font-semibold text-sm hover:scale-105 transition-transform">
+          {copied ? "✓ Copied" : "📋 Copy Output"}
+        </button>
       </div>
       
       {error && (
