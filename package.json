@@ -16,6 +16,7 @@
     "@ffmpeg/util": "^0.12.2",
     "@huggingface/transformers": "^4.0.1",
     "@imagemagick/magick-wasm": "^0.0.39",
+    "framer-motion": "^12.38.0",
     "jszip": "^3.10.1",
     "markdown-it": "^14.1.1",
     "mupdf": "^1.27.0",
