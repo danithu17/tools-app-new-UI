@@ -25,16 +25,13 @@
   --neon-pink: #dc2626; /* Darker Red */
 }
 
+/* Dark mode true OLED black overrides */
 [data-theme="dark"] {
   color-scheme: dark;
-}
-
-/* Dark mode: use true black instead of slate/blue */
-[data-theme="dark"] {
-  --color-slate-950: #050505;
-  --color-slate-900: #0a0a0c;
-  --color-slate-800: #141416;
-  --color-slate-700: #222225;
+  --color-slate-950: #000000;
+  --color-slate-900: #050505;
+  --color-slate-800: #0a0a0c;
+  --color-slate-700: #141416;
 }
 
 *,
@@ -56,17 +53,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark Mode Premium Holographic Grid & Glow Background */
 [data-theme="dark"] body {
-  background-color: #020617; /* Very deep slate */
+  background-color: #000000;
   color: #f8fafc;
+  background-image: 
+    radial-gradient(ellipse at top, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+  background-position: top center, center center, center center;
+  background-attachment: fixed;
 }
 
-/* Futuristic Backgrounds & Patterns - Subdued for Apple Style */
-.bg-grid-pattern {
-  background-image: none;
+/* Animated Grid Pulse for Dark Mode */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
-[data-theme="light"] .bg-grid-pattern {
-  background-image: none;
+
+[data-theme="dark"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, #000000 100%);
+  z-index: 0;
 }
 
 /* Apple style Frosted Glass panels */
@@ -78,10 +90,22 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
 }
 
+/* Next-Gen Dark Glass */
 [data-theme="dark"] .glass-panel {
-  background: rgba(15, 23, 42, 0.5); /* Deep slate translucent */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(10, 10, 12, 0.4); 
+  backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover glow effect for dark mode cards */
+[data-theme="dark"] .tool-card-hover {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .tool-card-hover:hover {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.15), 0 0 40px rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.3);
 }
 
 /* AI Glow effects */
@@ -113,8 +137,8 @@ body {
 }
 
 @keyframes border-glow {
-  0% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.2), inset 0 0 5px rgba(168, 85, 247, 0.1); }
-  100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.6), inset 0 0 10px rgba(168, 85, 247, 0.3); }
+  0% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.2), inset 0 0 5px rgba(249, 115, 22, 0.1); }
+  100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 10px rgba(249, 115, 22, 0.3); }
 }
 
 .animated-gradient-bg {

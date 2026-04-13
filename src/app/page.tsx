@@ -296,7 +296,7 @@ export function ToolDashboard({ defaultCategory = "all" }: { defaultCategory?: C
                 key={tool.id}
                 variants={cardVariants}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className={`group relative flex flex-col gap-4 p-5 rounded-3xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/50 shadow-sm transition-shadow duration-300 hover:shadow-xl hover:border-slate-200 dark:hover:border-slate-600 ${
+                className={`group relative flex flex-col gap-4 p-5 rounded-3xl bg-white dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/50 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-slate-200 tool-card-hover ${
                   tool.soon ? "opacity-60" : ""
                 }`}
               >
@@ -382,7 +382,7 @@ export function ToolDashboard({ defaultCategory = "all" }: { defaultCategory?: C
 export default function Home() {
   return (
     <Suspense fallback={<main className="flex-1 flex items-center justify-center min-h-screen text-slate-400">Loading...</main>}>
-      <main className="flex-1 flex flex-col w-full bg-white dark:bg-[#0a0a0c]">
+      <main className="flex-1 flex flex-col w-full bg-white dark:bg-transparent">
         <HeroSection />
         <FeatureSection />
         <ToolDashboard />
