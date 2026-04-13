@@ -4,10 +4,10 @@ import Link from "next/link";
 import { Suspense, useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { CATEGORIES, TOOLS, CAT_LABEL, type CategoryId } from "@/lib/tools";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 function HeroSection() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,7 +15,7 @@ function HeroSection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
   };
@@ -200,7 +200,7 @@ export function ToolDashboard({ defaultCategory = "all" }: { defaultCategory?: C
   }, [defaultCategory, searchQuery]);
 
   // Container variants for the staggered grid entrance
-  const gridVariants = {
+  const gridVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -210,7 +210,7 @@ export function ToolDashboard({ defaultCategory = "all" }: { defaultCategory?: C
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95, y: 15 },
     show: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
   };
