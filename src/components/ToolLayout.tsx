@@ -87,10 +87,10 @@ export default function ToolLayout({ children }: { children: React.ReactNode }) 
   const isHome = pathname === "/";
 
   return (
-    <div className="flex min-h-screen bg-[#fbfbfd] dark:bg-transparent text-[#1d1d1f] dark:text-slate-100">
+    <div className="flex min-h-screen bg-[#fbfbfd] dark:bg-slate-950 text-[#1d1d1f] dark:text-slate-100">
 
       {/* ── Sidebar ─────────────────────────────────── */}
-      <aside className="hidden lg:flex w-56 xl:w-64 shrink-0 flex-col border-r border-[#d2d2d7]/30 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl saturate-150">
+      <aside className="hidden lg:flex w-56 xl:w-64 shrink-0 flex-col border-r border-[#d2d2d7]/30 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl saturate-150">
 
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center px-5 py-4 border-b border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-900 transition-colors">
@@ -228,7 +228,7 @@ export default function ToolLayout({ children }: { children: React.ReactNode }) 
 
         {/* Mobile drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-b border-[#d2d2d7]/30 dark:border-slate-800/80 bg-[#fbfbfd] dark:bg-slate-950/80 backdrop-blur-xl px-3 py-3">
+          <div className="lg:hidden border-b border-[#d2d2d7]/30 dark:border-slate-800/80 bg-[#fbfbfd] dark:bg-slate-900 px-3 py-3">
             {(["pdf", "img", "video"] as const).map((catId) => {
               const catTools = TOOLS.filter((t) => t.category === catId);
               const catInfo = CATEGORIES.find((c) => c.id === catId)!;

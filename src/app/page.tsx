@@ -382,7 +382,7 @@ export function ToolDashboard({ defaultCategory = "all" }: { defaultCategory?: C
 export default function Home() {
   return (
     <Suspense fallback={<main className="flex-1 flex items-center justify-center min-h-screen text-slate-400">Loading...</main>}>
-      <main className="flex-1 flex flex-col w-full bg-white dark:bg-transparent">
+      <main className="flex-1 flex flex-col w-full bg-white dark:bg-[#0a0a0c]">
         <HeroSection />
         <FeatureSection />
         <ToolDashboard />

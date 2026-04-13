@@ -25,13 +25,13 @@
   --neon-pink: #dc2626; /* Darker Red */
 }
 
-/* Dark mode true OLED black overrides */
+/* Premium Midnight Dark Mode (Softened from Pure Black) */
 [data-theme="dark"] {
   color-scheme: dark;
-  --color-slate-950: #000000;
-  --color-slate-900: #050505;
-  --color-slate-800: #0a0a0c;
-  --color-slate-700: #141416;
+  --color-slate-950: #0a0a0c;
+  --color-slate-900: #121214;
+  --color-slate-800: #1c1c1f;
+  --color-slate-700: #2a2a2e;
 }
 
 *,
@@ -53,35 +53,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark Mode Premium Holographic Grid & Glow Background */
+/* Soft Midnight background for Dark Mode */
 [data-theme="dark"] body {
-  background-color: #000000;
+  background-color: #0a0a0c;
   color: #f8fafc;
-  background-image: 
-    radial-gradient(ellipse at top, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 100% 100%, 50px 50px, 50px 50px;
-  background-position: top center, center center, center center;
+  background-image: radial-gradient(circle at top center, rgba(220, 38, 38, 0.05), transparent 70%);
   background-attachment: fixed;
 }
 
-/* Animated Grid Pulse for Dark Mode */
-@keyframes gridPulse {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
-}
-
-[data-theme="dark"] body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, transparent 0%, #000000 100%);
-  z-index: 0;
-}
-
-/* Apple style Frosted Glass panels */
+/* Frosted Glass panels */
 .glass-panel {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: saturate(180%) blur(20px);
@@ -90,22 +70,21 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
 }
 
-/* Next-Gen Dark Glass */
 [data-theme="dark"] .glass-panel {
-  background: rgba(10, 10, 12, 0.4); 
-  backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  background: rgba(22, 22, 24, 0.6);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Hover glow effect for dark mode cards */
-[data-theme="dark"] .tool-card-hover {
-  transition: all 0.3s ease;
+/* Tool card dynamic hover */
+.tool-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-[data-theme="dark"] .tool-card-hover:hover {
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.15), 0 0 40px rgba(220, 38, 38, 0.1);
+[data-theme="dark"] .tool-card:hover {
   border-color: rgba(220, 38, 38, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(220, 38, 38, 0.05);
 }
 
 /* AI Glow effects */
@@ -118,18 +97,6 @@ body {
   animation: gradient-xy 8s ease infinite;
 }
 
-.ai-border-gradient {
-  position: relative;
-  border-radius: 1rem;
-  background: linear-gradient(var(--color-slate-900), var(--color-slate-900)) padding-box,
-              linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink)) border-box;
-  border: 2px solid transparent;
-}
-[data-theme="light"] .ai-border-gradient {
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-              linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink)) border-box;
-}
-
 @keyframes gradient-xy {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -137,8 +104,8 @@ body {
 }
 
 @keyframes border-glow {
-  0% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.2), inset 0 0 5px rgba(249, 115, 22, 0.1); }
-  100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 10px rgba(249, 115, 22, 0.3); }
+  0% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.2); }
+  100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.4); }
 }
 
 .animated-gradient-bg {
