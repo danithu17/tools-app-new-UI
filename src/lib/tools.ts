@@ -61,7 +61,7 @@ export const TOOLS: Tool[] = [
   { id: "rotate-image",     name: "Rotate & Flip",       icon: "↩️", description: "Rotate images and flip them horizontally or vertically.",                    category: "img", isNew: true },
   { id: "crop-image",       name: "Crop Image",          icon: "✂️", description: "Crop images to the exact size you need.",                                   category: "img", isNew: true },
   { id: "watermark-image",  name: "Watermark Image",     icon: "💧", description: "Add a text watermark to protect your images.",                              category: "img", isNew: true },
-  { id: "color-picker",     name: "Color Extractor",     icon: "🎨", description: "Extract dominant color palettes directly from any image.", category: "img", soon: true },
+  { id: "color-picker",     name: "Color Extractor",     icon: "🎨", description: "Extract dominant color palettes directly from any image.", category: "img", isNew: true },
 
   // Video Section
   { id: "compress-video",   name: "Compress Video",      icon: "📦", description: "Reduce video file size while preserving quality.",                           category: "video", popular: true },
@@ -74,35 +74,35 @@ export const TOOLS: Tool[] = [
   { id: "subtitle-generator", name: "Subtitle Generator", icon: "💬", description: "Auto-generate subtitles from any video or audio file locally.",             category: "video", popular: true },
 
   // Dev Hub
-  { id: "svg-optimizer",    name: "SVG Optimizer",       icon: "🖌️", description: "Clean up and minify SVG code for faster web performance.",                   category: "dev", isNew: true, soon: true },
-  { id: "regex-tester",     name: "Regex Tester",        icon: "🔍", description: "Test and build complex regular expressions with real-time feedback.",         category: "dev", isNew: true, soon: true },
-  { id: "jwt-decoder",      name: "JWT Decoder",         icon: "🎫", description: "Safely inspect and decode JSON Web Tokens locally in your browser.",        category: "dev", isNew: true, soon: true },
-  { id: "sql-formatter",    name: "SQL Formatter",       icon: "📂", description: "Pretty-print or minify SQL queries for better readability.",                category: "dev", isNew: true, soon: true },
-  { id: "crontab-generator", name: "Crontab Generator",  icon: "⏰", description: "Visual editor to generate cron schedules for your server tasks.",            category: "dev", isNew: true, soon: true },
+  { id: "svg-optimizer",    name: "SVG Optimizer",       icon: "🖌️", description: "Clean up and minify SVG code for faster web performance.",                   category: "dev", isNew: true },
+  { id: "regex-tester",     name: "Regex Tester",        icon: "🔍", description: "Test and build complex regular expressions with real-time feedback.",         category: "dev", isNew: true },
+  { id: "jwt-decoder",      name: "JWT Decoder",         icon: "🎫", description: "Safely inspect and decode JSON Web Tokens locally in your browser.",        category: "dev", isNew: true },
+  { id: "sql-formatter",    name: "SQL Formatter",       icon: "📂", description: "Pretty-print or minify SQL queries for better readability.",                category: "dev", isNew: true },
+  { id: "crontab-generator", name: "Crontab Generator",  icon: "⏰", description: "Visual editor to generate cron schedules for your server tasks.",            category: "dev", isNew: true },
   { id: "json-formatter",   name: "JSON Formatter",      icon: "{} ", description: "Instantly format, validate, and minify messy JSON code offline.",           category: "dev", isNew: true },
 
   // Security Suite
-  { id: "metadata-scrubber", name: "Metadata Scrubber",   icon: "🕵️", description: "Remove EXIF metadata like GPS and camera info from your photos.",           category: "security", isNew: true, soon: true },
-  { id: "file-encryptor",   name: "File Encryptor",      icon: "🔐", description: "Lock any file with military-grade AES encryption before uploading.",         category: "security", isNew: true, soon: true },
-  { id: "ssh-key-gen",     name: "SSH Key Generator",   icon: "🔑", description: "Generate secure public and private key pairs for your servers.",             category: "security", isNew: true, soon: true },
-  { id: "digital-signatures", name: "Digital Signatures", icon: "🖋️", description: "Sign documents and verify signatures locally on your device.",                category: "security", isNew: true, soon: true },
+  { id: "metadata-scrubber", name: "Metadata Scrubber",   icon: "🕵️", description: "Remove EXIF metadata like GPS and camera info from your photos.",           category: "security", isNew: true },
+  { id: "file-encryptor",   name: "File Encryptor",      icon: "🔐", description: "Lock any file with military-grade AES encryption before uploading.",         category: "security", isNew: true },
+  { id: "ssh-key-gen",     name: "SSH Key Generator",   icon: "🔑", description: "Generate secure public and private key pairs for your servers.",             category: "security", isNew: true },
+  { id: "digital-signatures", name: "Digital Signatures", icon: "🖋️", description: "Sign documents and verify signatures locally on your device.",                category: "security", isNew: true },
 
   // Data Workshop
-  { id: "csv-json-excel",   name: "Data Converter",      icon: "📑", description: "Seamlessly convert between CSV, JSON, and Excel formats instantly.",         category: "data", isNew: true, soon: true },
-  { id: "xml-formatter",    name: "XML Formatter",       icon: "📄", description: "Handle complex XML structures with formatting and minification.",            category: "data", isNew: true, soon: true },
-  { id: "data-visualizer",  name: "Data Visualizer",     icon: "📈", description: "Paste a CSV and generate beautiful charts and graphs instantly.",           category: "data", isNew: true, soon: true },
-  { id: "unit-converter",   name: "Unit Converter",      icon: "📏", description: "Professional-grade conversion for technical and daily units.",              category: "data", isNew: true, soon: true },
+  { id: "csv-json-excel",   name: "Data Converter",      icon: "📑", description: "Seamlessly convert between CSV, JSON, and Excel formats instantly.",         category: "data", isNew: true },
+  { id: "xml-formatter",    name: "XML Formatter",       icon: "📄", description: "Handle complex XML structures with formatting and minification.",            category: "data", isNew: true },
+  { id: "data-visualizer",  name: "Data Visualizer",     icon: "📈", description: "Paste a CSV and generate beautiful charts and graphs instantly.",           category: "data", isNew: true },
+  { id: "unit-converter",   name: "Unit Converter",      icon: "📏", description: "Professional-grade conversion for technical and daily units.",              category: "data", isNew: true },
 
   // Audio Studio
-  { id: "mp3-trimmer",      name: "Audio Trimmer",       icon: "✂️", description: "Cut and join MP3, WAV or AAC audio files with precision.",                  category: "audio", isNew: true, soon: true },
-  { id: "audio-merger",     name: "Audio Merger",        icon: "🔗", description: "Combine multiple audio tracks into a single high-quality file.",             category: "audio", isNew: true, soon: true },
-  { id: "volume-booster",   name: "Volume Booster",      icon: "🔊", description: "Increase or normalize audio levels without loss of quality.",              category: "audio", isNew: true, soon: true },
-  { id: "audio-converter",  name: "Format Converter",    icon: "🔄", description: "Convert between FLAC, WAV, MP3 and other audio formats.",                   category: "audio", isNew: true, soon: true },
+  { id: "mp3-trimmer",      name: "Audio Trimmer",       icon: "✂️", description: "Cut and join MP3, WAV or AAC audio files with precision.",                  category: "audio", isNew: true },
+  { id: "audio-merger",     name: "Audio Merger",        icon: "🔗", description: "Combine multiple audio tracks into a single high-quality file.",             category: "audio", isNew: true },
+  { id: "volume-booster",   name: "Volume Booster",      icon: "🔊", description: "Increase or normalize audio levels without loss of quality.",              category: "audio", isNew: true },
+  { id: "audio-converter",  name: "Format Converter",    icon: "🔄", description: "Convert between FLAC, WAV, MP3 and other audio formats.",                   category: "audio", isNew: true },
 
   // Social Toolkit
-  { id: "aspect-ratio-crop", name: "Social Crop",         icon: "📐", description: "One-tap crop for Instagram, TikTok, and YouTube aspect ratios.",             category: "social", isNew: true, soon: true },
-  { id: "thumbnail-maker",  name: "Thumbnail Maker",     icon: "🖼️", description: "Quickly create thumbnails with text overlays and background effects.",      category: "social", isNew: true, soon: true },
-  { id: "privacy-blur",     name: "Privacy Blur",        icon: "🌫️", description: "Blur faces, license plates, or sensitive info in videos and photos.",        category: "social", isNew: true, soon: true },
+  { id: "aspect-ratio-crop", name: "Social Crop",         icon: "📐", description: "One-tap crop for Instagram, TikTok, and YouTube aspect ratios.",             category: "social", isNew: true },
+  { id: "thumbnail-maker",  name: "Thumbnail Maker",     icon: "🖼️", description: "Quickly create thumbnails with text overlays and background effects.",      category: "social", isNew: true },
+  { id: "privacy-blur",     name: "Privacy Blur",        icon: "🌫️", description: "Blur faces, license plates, or sensitive info in videos and photos.",        category: "social", isNew: true },
 
   // Utils Section
   { id: "create-zip",       name: "Create ZIP",          icon: "🤐", description: "Quickly bundle multiple local files into a single ZIP archive.",             category: "utils", isNew: true },
